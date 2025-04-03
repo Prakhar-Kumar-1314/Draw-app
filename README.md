@@ -1,84 +1,101 @@
-# Turborepo starter
+# Draw App - Collaborative Drawing Platform
 
-This Turborepo starter is maintained by the Turborepo core team.
+A real-time collaborative drawing application built with Next.js, WebSocket, and TypeScript. This application allows multiple users to draw together in real-time, with features like chat rooms and persistent storage.
 
-## Using this example
+## Features
 
-Run the following command:
+- 🎨 Real-time collaborative drawing
+- 💬 Built-in chat functionality
+- 🔗 Room-based collaboration
+- 🎯 Real-time cursor tracking
+- 💾 Persistent storage
+- 🚀 Modern tech stack
+- 📱 Responsive design
 
-```sh
-npx create-turbo@latest
-```
+## Tech Stack
 
-## What's inside?
+- **Frontend**: Next.js, React, TypeScript
+- **Backend**: Node.js, WebSocket
+- **Database**: Prisma with SQL database
+- **Styling**: CSS Modules
+- **Build Tool**: Turborepo
+- **Package Manager**: pnpm
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+## Project Structure
 
 ```
-cd my-turborepo
-pnpm build
+draw-app/
+├── apps/
+│   ├── web/               # Next.js frontend application
+│   ├── http-backend/      # HTTP API server
+│   └── ws-backend/        # WebSocket server for real-time features
+├── packages/
+│   ├── common/            # Shared types and utilities
+│   ├── db/               # Database layer with Prisma
+│   ├── ui/               # Shared UI components
+│   └── eslint-config/    # ESLint configurations
 ```
 
-### Develop
+## Getting Started
 
-To develop all apps and packages, run the following command:
+### Prerequisites
 
+- Node.js (v18 or higher)
+- pnpm
+- SQL database (for persistent storage)
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Prakhar-Kumar-1314/Draw-app.git
+cd Draw-app
 ```
-cd my-turborepo
+
+2. Install dependencies:
+
+```bash
+pnpm install
+```
+
+3. Set up environment variables:
+
+```bash
+cp apps/web/.env.example apps/web/.env
+cp apps/http-backend/.env.example apps/http-backend/.env
+cp apps/ws-backend/.env.example apps/ws-backend/.env
+```
+
+4. Start the development servers:
+
+```bash
 pnpm dev
 ```
 
-### Remote Caching
+The application will be available at `http://localhost:3000`
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+## Development
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- `pnpm dev` - Start all applications in development mode
+- `pnpm build` - Build all applications
+- `pnpm lint` - Run linting
+- `pnpm test` - Run tests
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+## Contributing
 
-```
-cd my-turborepo
-npx turbo login
-```
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## License
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```
-npx turbo link
-```
+## Acknowledgments
 
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- Built with [Next.js](https://nextjs.org/)
+- Real-time features powered by WebSocket
+- UI components inspired by modern design systems
